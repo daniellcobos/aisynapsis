@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+<main class="container">
+  <div class="bg-primary text-white p-5 rounded mt-5">
+    <h1> Contenido General </h1>
+    <p class="lead">
+    Contenido basico creado por la Inteligencia Artificial GPT-3 de OpenAI.
+    </p>
+
+    <h2>Introduzca el texto semilla</h2>
+
+    <form class="" action="/content" method="post">
+
+      <div class="mb-3">
+        <label class="form-label">Oracion basica</label>
+        <input type="text" class="form-control" name="cadena" placeholder="ejemplo: Tendencias en Ingestigacion de Mercados">
+        <div class="form-text text-white">Describa lo que desea que la Inteligencia autocomplete</div>
+      </div>
+        <div class="row">
+            <div class="col">
+            <label for="temp" class="form-label">Temperatura (Mayor temperatura hara a la IA mas creativa)  </label><span style="float: right" id="tempval"> </span>
+            <input class="form-range" name="temp" id="temp" type="range" min="0" max="1"  step="0.1" onchange="uTTemp()">
+        </div>
+              <div class="col">
+            <label for="customRange1" class="form-label">Longitud de caracteres de la respuesta</label><span style="float: right"  id="charsval"> </span>
+            <input class="form-range" name="chars" id ="chars" type="range" min="0" max="1024" onchange="uTChars()">
+        </div>
+        </div>
+
+      <button type="submit" class="btn btn-info btn-lg"> Obtener contenido desde Inteligencia Artificial</button>
+
+    </form>
+  </div>
+
+
+  <div class="p-3 rounded">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3 class="text-primary">{{prompt}}</h3>
+        <p class="lead">{{openAIAnswer |safe}}</p>
+
+      </div>
+    </div>
+  </div>
+</main>
+    <script>
+
+    function updateTextInput(slider,outbox) {
+         const upval = slider.value
+
+          outbox.innerText = " " + upval + " "
+        }
+
+    const temp = document.getElementById("temp")
+    const chars = document.getElementById("chars")
+    const tempval = document.getElementById("tempval")
+    const charsval = document.getElementById("charsval")
+    const uTTemp = () => {
+        updateTextInput(temp,tempval)
+    }
+    const uTChars = () =>{
+        updateTextInput(chars,charsval)
+    }
+    </script>
+{% endblock %}

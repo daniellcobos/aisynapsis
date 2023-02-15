@@ -1,0 +1,101 @@
+{% extends 'layout.html' %}
+
+
+
+
+{% block body %}
+<main class="container">
+  <div class=" bg-primary text-white p-5 rounded mt-5">
+    <h1>Synapsis AI Content Generator with OpenAI GPT-3</h1>
+    <p class="lead">Aplicacion web para crear contenidos automaticos usando la Artificial Intelligence API from OpenAI.
+    </p>
+    <p class="lead">Puede utilizar este generador de contenidos para crear ideas para slides, para entradas de blog, contenidos para redes sociales, etc.</p>
+  </div>
+
+
+  <div class="p-5 rounded mt-1">
+    <div class="row">
+
+
+      <!-- One Item Starts Here -->
+      <div class="col-lg-3 mb-3">
+        <div class="card">
+          <div class="card-header">
+            Genere contenido basado en un tema
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"> Macroeconomia</h5>
+            <p class="card-text">¿Cuales son los indicadores mas importantes en macroeconomia?</p>
+          </div>
+        </div>
+      </div>
+      <!-- One Item Ends here -->
+
+      <!-- One Item Starts Here -->
+      <div class="col-lg-3 mb-3">
+        <div class="card">
+          <div class="card-header">
+            Genere contenido explorando tendencias
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"> Market Research</h5>
+            <p class="card-text">Which is the future in market research?</p>
+          </div>
+        </div>
+      </div>
+      <!-- One Item Ends here -->      
+
+      <!-- One Item Starts Here -->
+      <div class="col-lg-3 mb-3">
+        <div class="card">
+          <div class="card-header">
+            Genere contenido con focos de atencion
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"> Lanzamiento de Productos</h5>
+            <p class="card-text">¿Cuales son los 3 puntos mas importantes para lanzar un producto al mercado?</p>
+          </div>
+        </div>
+      </div>
+      <!-- One Item Ends here -->          
+
+
+      <!-- One Item Starts Here -->
+      <div class="col-lg-3 mb-3">
+        <div class="card">
+          <div class="card-header">
+            Genere contenido tecnico
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"> Estadistica</h5>
+            <p class="card-text">Explicame de forma simple el teorema del limite central</p>
+            <p class="card-text">Explicame de forma matematica el teorema del limite central</p>
+          </div>
+        </div>
+      </div>
+      <!-- One Item Ends here -->          
+
+      <!-- One Item Starts Here -->
+      <div class="col-lg-3 mb-3">
+        <div class="card">
+          <div class="card-header">
+            Genere contenido tecnico
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"> Marketing</h5>
+            <p class="card-text">¿Como diseñar el marketing mix de un nuevo producto?</p>
+          </div>
+        </div>
+      </div>
+      <!-- One Item Ends here -->              
+
+    </div>
+  </div>
+ <hr>
+    <h2>Ultimas Consultas</h2>
+ {% for message in messages %}
+    <p class="card-text"> {{ message |safe }} </p>
+ {% endfor %}
+<hr>
+</main>
+{% endblock %}

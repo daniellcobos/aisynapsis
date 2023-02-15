@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+
+
+
+{% block body %}
+<main class="container mt-5">
+<div class="row pt-1">
+        <h2>Ultimas Consultas</h2>
+ {% for message in messages %}
+    <p class="card-text"> {{ message |safe }} </p>
+ {% endfor %}
+</div>
+
+</main>
+
+{% endblock %}
