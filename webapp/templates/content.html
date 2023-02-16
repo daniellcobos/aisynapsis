@@ -21,14 +21,23 @@
         <div class="row">
             <div class="col">
             <label for="temp" class="form-label">Temperatura (Mayor temperatura hara a la IA mas creativa)  </label><span style="float: right" id="tempval"> </span>
-            <input class="form-range" name="temp" id="temp" type="range" min="0" max="1"  step="0.1" onchange="uTTemp()">
+            <input class="form-range bg-light rounded mt-1" name="temp" id="temp" type="range" min="0" max="1"  step="0.1" onchange="uTTemp()">
         </div>
               <div class="col">
             <label for="customRange1" class="form-label">Longitud de caracteres de la respuesta</label><span style="float: right"  id="charsval"> </span>
-            <input class="form-range" name="chars" id ="chars" type="range" min="0" max="1024" onchange="uTChars()">
+            <input class="form-range bg-light rounded mt-1" name="chars" id ="chars" type="range" min="0" max="1024" onchange="uTChars()">
         </div>
         </div>
-
+        <div class="row">
+            <div class="col">
+                <label for="IA">Tipo de Inteligencia Artificial </label>
+                <select class="form-select form-select-lg mb-3" name ="IA" id ="IA" aria-label=".form-select-lg example">
+              <option value="text-davinci-003"> DaVinci (IA Creativa)</option>
+              <option value="text-curie-001">Curie (IA Simple, pero mas rapida)</option>
+                    <option value="text-babbage-001">Babbage (Busqueda de significados, mas rapida que Curie)</option>
+            </select>
+            </div>
+        </div>
       <button type="submit" class="btn btn-info btn-lg"> Obtener contenido desde Inteligencia Artificial</button>
 
     </form>

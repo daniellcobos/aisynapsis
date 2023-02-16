@@ -46,9 +46,11 @@ def coldEmails():
         submission = request.form['cadena']
         temp = request.form["temp"]
         chars = request.form["chars"]
+        ia = request.form["IA"]
         query = format(submission)
+
         email = session["Username"]
-        openAIAnswerUnformatted = webapp.aicontent.openAIQuery(query,temp,chars)
+        openAIAnswerUnformatted = webapp.aicontent.openAIQuery(query,temp,chars,ia)
         openAIAnswer = openAIAnswerUnformatted.replace('\n', '<br>')
         prompt = 'La AI sugiere {} :'.format(submission)
         with open("querylog.txt", 'a+', encoding="utf-8") as log:
